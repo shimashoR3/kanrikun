@@ -6,14 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="お薬と通院の予定を管理するアプリ">
         <link rel="stylesheet" href="css/style.css">
-        <script>
-            var date = new Date();
-            var year = date.getFullYear();
-            var month = date.getMonth() + 1;
-            var day = date.getDate();
-            if(len(
-            var today = year + "-" + month + "-" + day;
-        </script>
     </head>
 
     <body>
@@ -31,23 +23,34 @@
                     <h2>通院の予定</h2>
 
                     <table class="ta1">
-                        <tr>
-                            <th>受診日</th>
-                            <td><input type="date" min=today name="受診日" size="30" class="ws"></td>
-                        </tr>
-                        <tr>
-                            <th>病院名</th>
-                            <td><input type="text" name="病院名" size="30" class="ws"></td>
-                        </tr>
+                        <form id="insertForm" autocomplete="off">
                             <tr>
-                            <th>メモ</th>
-                            <td><textarea name="メモ" cols="30" rows="10" class="wl"></textarea></td>
-                        </tr>
+                                <th>受診日</th>
+                                <td>
+                                    <input type="date" name="jusin">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>病院名</th>
+                                <td>
+                                    <input type="text" name="byouin">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>備考</th>
+                                <td>
+                                    <textarea name="memo" cols="30" rows="10"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="btn">
+                                        <input type="submit" value="登録する" onclick="insert()">
+                                    </p>
+                                </td>
+                            </tr>
+                        </form>
                     </table>
-
-                    <p class="btn">
-                    <input type="submit" value="内容を確認する">
-                    </p>
 
                 </section>
                 
@@ -61,6 +64,9 @@
 
         <!--job4用のスクリプト-->
         <script src="js/main.js"></script>
+        
+        <script src="js/yotei.js"></script>
+        <script src="js/education.js"></script>
 
     </body>
 </html>
